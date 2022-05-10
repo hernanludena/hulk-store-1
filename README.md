@@ -1,6 +1,10 @@
-# HulkStore
+# Hulk Store
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
+
+## Start angular modules
+
+Run `npm install` to install the dependent modules of the Angular project.
 
 ## Development server
 

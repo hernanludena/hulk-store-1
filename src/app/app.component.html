@@ -1,0 +1,26 @@
+<div id="content" class="col col-lg-10 offset-md-1">
+  <header id="header" class="col col-lg-12">
+    <h1>{{title}}</h1>
+  </header>
+  <div class="row">
+    <nav id="nav" class="col col-lg-12">
+      <ul>
+        <li><a [routerLink]="['/']" [routerLinkActive]="['activeLink']">Home</a></li>
+        <li><a [routerLink]="['/customer-list']" [routerLinkActive]="['activeLink']">Customer's</a></li>
+        <li><a [routerLink]="['/product-list']" [routerLinkActive]="['activeLink']">Product's</a></li>
+        <li><a [routerLink]="['/inventory-store']" [routerLinkActive]="['activeLink']">Inventory</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="row">
+    <section id="main" class="col col-lg-12">
+      <!--Principal component -->
+      <router-outlet></router-outlet>
+    </section>
+  </div>  
+  <footer id="footer" class="col col-lg-12 col-lg-offset-1">
+    <p>Fono: + 593 2 3230 201
+    <br>Lizardo Garcia E10 – 80 y Av. 12 de Octubre, Edificio Alto Aragón, Piso 4
+    <br><a href="https://www.todo1services.com/">todo1.com</a></p>
+  </footer>
+</div>

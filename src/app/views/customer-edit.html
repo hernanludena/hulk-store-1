@@ -1,0 +1,27 @@
+<div class="col col-lg-10 offset-md-1">
+	<div class="jumbotron">
+		<h3>{{title}}</h3>
+		<hr/>
+		<form #formCustomer="ngForm" (ngSubmit)="onSubmit()" class="col col-lg-6" id="form-customer">
+			<label>Id:</label>
+			<label>{{customer.id}}</label><br>
+			<label>Username:</label><br>
+			<label><strong>{{customer.account.username}}</strong></label><br>
+			<label>Names:
+			<span *ngIf="!names.valid && names.touched">Obligatory field</span></label>
+			<input type="text" #names="ngModel" name="names" [(ngModel)]="customer.names" class="form-control" required>
+			<label>Surname:
+			<span *ngIf="!surname.valid && surname.touched">Obligatory field</span></label>
+			<input type="text" #surname="ngModel" name="surname" [(ngModel)]="customer.surname" class="form-control" required>
+			<label>Phone:
+			<span *ngIf="!phone.valid && phone.touched">Obligatory field</span></label>
+			<input type="text" #phone="ngModel" name="phone" [(ngModel)]="customer.phone" class="form-control" required>
+			<label>Address:
+			<span *ngIf="!address.valid && address.touched">Obligatory field</span></label>
+			<input type="text" #address="ngModel" name="address" [(ngModel)]="customer.address" class="form-control" required>
+			<br>
+			<input type="submit" value="{{textButton}}" [disabled]="!formCustomer.form.valid" class="btn btn-lg btn-success spaceButton">
+			<a [routerLink]="['/customer-list']" class="btn btn-lg btn-info spaceButton">{{cancelButton}}</a>
+		</form>
+	</div>
+</div>

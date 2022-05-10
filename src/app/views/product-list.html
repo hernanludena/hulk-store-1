@@ -1,0 +1,30 @@
+<div class="col col-lg-10 offset-md-1">
+	<div class="jumbotron">
+		<h3>{{title}}</h3>
+		<hr/>
+		<div class="row">
+			<nav class="col col-lg-12">
+		      <ul>
+		        <li><a [routerLink]="['/product-add']">Add product</a></li>
+		      </ul>
+		    </nav>
+		</div>
+		<div class="row">
+			<div *ngIf="!productList">
+				<p>Loading product list...</p>
+			</div>
+			<div *ngIf="productList">
+				<div class="row">
+					<div class="col col-lg-4 panelDiv" *ngFor="let product of productList">
+						<p>{{ product.code }} {{ product.productType }}</p>
+						<h3>{{ product.names }}</h3>
+						<p>$ {{ product.price }}</p>
+						<p>{{ product.description }}</p>
+						<a [routerLink]="['/product-edit', product.id]" class="btn btn-success spaceButton">Edit</a>
+						<a (click)="deleteProduct(product.id)" class="btn btn-secondary spaceButton">Delete</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
